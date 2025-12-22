@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<!-- Primary Meta Tags -->
+<meta name="title" content="Adarsh R Vishwakarma — YouTube Thumbnail Designer">
+<meta name="description" content="Professional YouTube thumbnail designer creating high-click, scroll-stopping thumbnails. Clean design, strong emotion, high contrast.">
+
+<!-- SEO -->
+<meta name="keywords" content="thumbnail designer, youtube thumbnails, graphic designer, youtube design, clickbait thumbnails, adarsh r vishwakarma">
+<meta name="author" content="Adarsh R Vishwakarma">
+<meta name="robots" content="index, follow">
+
+<!-- Viewport (already present but keeping for clarity) -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Open Graph / Facebook / WhatsApp -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://your-site-url.netlify.app/">
+<meta property="og:title" content="Adarsh R Vishwakarma — Thumbnail Designer">
+<meta property="og:description" content="I design YouTube thumbnails that make people stop scrolling.">
+<meta property="og:image" content="https://your-site-url.netlify.app/OG-image/og-image.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://your-site-url.netlify.app/">
+<meta property="twitter:title" content="Adarsh R Vishwakarma — Thumbnail Designer">
+<meta property="twitter:description" content="High-contrast, emotion-driven YouTube thumbnails designed to get clicks.">
+<meta property="twitter:image" content="https://your-site-url.netlify.app/images/og-image.png">
+
+
+
+<title>Adarsh R Vishwakarma — Thumbnail Designer</title>
+
+<style>
+:root {
+  --bg: #0b0b0c;
+  --text: #f5f5f5;
+  --muted: #8b8b8b;
+  --accent: #ff4d00;
+  --surface: #141416;
+  --outline: rgba(255,255,255,0.08);
+  --scroll-speed-row1: 40s;
+  --scroll-speed-row2: 45s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+section { padding: 120px 8vw; }
+
+.small {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* HEADER */
+header {
+  padding: 32px 8vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header span { font-weight: 600; }
+
+/* HERO */
+.hero {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: clamp(3.5rem, 7vw, 6rem);
+  line-height: 0.95;
+  font-weight: 700;
+}
+
+.hero h1 em { font-style: normal; color: var(--accent); }
+
+.hero p {
+  margin-top: 32px;
+  max-width: 520px;
+  font-size: 18px;
+  color: var(--muted);
+}
+
+/* CTA */
+.cta {
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
+}
+
+.btn-primary {
+  padding: 14px 28px;
+  background: var(--accent);
+  color: #000;
+  font-weight: 600;
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+.btn-secondary {
+  padding: 14px 28px;
+  border: 1px solid var(--outline);
+  color: var(--text);
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+/* IMAGE */
+.portrait {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background: url('Adarsh Pic banner.png') center/cover no-repeat;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.portrait::after { display: none; } /* remove placeholder */
+
+/* THUMBNAILS */
+.thumbnails { padding: 80px 0; }
+
+.thumbnails .small { display: block; margin-bottom: 24px; }
+
+.row-container {
+  overflow: hidden;
+  margin-top: 40px;
+  position: relative;
+}
+
+.row {
+  display: flex;
+  gap: 32px;
+  animation: scroll-left var(--scroll-speed-row1) linear infinite;
+}
+
+.row.reverse { animation: scroll-right var(--scroll-speed-row2) linear infinite; }
+
+.thumb {
+  flex: 0 0 300px;
+  height: 170px;
+  background: var(--surface);
+  border-radius: 8px;
+  position: relative;
+  transition: transform 0.3s;
+}
+
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+.thumb span {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.thumb:hover { transform: scale(1.05); }
+
+.thumb:hover span { opacity: 1; }
+
+.row-container::-webkit-scrollbar { display: none; }
+
+/* Scroll Animations */
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* WHY IT WORKS */
+.why-section {
+  padding: 80px 8vw;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 32px;
+  letter-spacing: 1px;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+}
+
+.why-card {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 24px;
+  font-size: 18px;
+  line-height: 1.5;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.why-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.3);
+}
+
+.why-num {
+  font-weight: 700;
+  color: var(--accent);
+  margin-right: 12px;
+  font-size: 22px;
+}
+
+/* CONTACT */
+.contact h2 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1;
+}
+
+.contact p {
+  margin-top: 24px;
+  font-size: 18px;
+  color: var(--muted);
+}
+
+a { color: var(--accent); text-decoration: none; }
+
+/* RESPONSIVE */
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;}
+  .portrait{max-width:320px;}
+  .thumb{flex:0 0 240px;height:140px;}
+  .row { animation-duration: calc(var(--scroll-speed-row1) / 1.5); }
+  .row.reverse { animation-duration: calc(var(--scroll-speed-row2) / 1.5); }
+}
+
+#selected_work {
+    padding: 120px 8vw;
+}
+
+/* note  */
+#note {
+  position: inherit;
+  margin-top: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <span>Adarsh R Vishwakarma</span>
+  <span class="small">Thumbnail Designer</span>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>I design <em>YouTube thumbnails</em><br>that make people stop scrolling.</h1>
+    <p>Clean compositions. Strong emotion. High contrast. Designed with intent not templates.</p>
+    <div class="cta">
+      <a href="#contact" class="btn-primary">Hire Me</a>
+      <a href="#thumbnails" class="btn-secondary">View Work</a>
+    </div>
+  </div>
+  <div class="portrait"></div>
+</section>
+
+<section class="thumbnails" id="thumbnails">
+  <span class="small" id="selected_work">Selected Work</span>
+
+  <div class="row-container">
+    <div class="row" style="--scroll-speed-row1: 40s;">
+      <div class="thumb">
+            <img src="Thumbnails/thumbnail 1.png" alt="Tech Review Thumbnail">
+            <span>Thumb 1</span>
+      </div>
+      <div class="thumb"><span>Thumb 2</span></div>
+      <div class="thumb"><span>Thumb 3</span></div>
+      <div class="thumb"><span>Thumb 4</span></div>
+      <!-- duplicate -->
+      <div class="thumb">
+            <img src="Thumbnails/thumbnail 1.png" alt="Tech Review Thumbnail">
+            <span>Thumb 1</span>
+      </div>
+      <div class="thumb"><span>Thumb 2</span></div>
+      <div class="thumb"><span>Thumb 3</span></div>
+      <div class="thumb"><span>Thumb 4</span></div>
+    </div>
+  </div>
+
+  <div class="row-container">
+    <div class="row reverse" style="--scroll-speed-row2: 45s;">
+      <div class="thumb"><span>Thumb 5</span></div>
+      <div class="thumb"><span>Thumb 6</span></div>
+      <div class="thumb"><span>Thumb 7</span></div>
+      <div class="thumb"><span>Thumb 8</span></div>
+      <!-- duplicate -->
+      <div class="thumb"><span>Thumb 5</span></div>
+      <div class="thumb"><span>Thumb 6</span></div>
+      <div class="thumb"><span>Thumb 7</span></div>
+      <div class="thumb"><span>Thumb 8</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="why-section">
+  <h2 class="section-title">Why It Works</h2>
+  <div class="why-grid">
+    <div class="why-card">
+      <span class="why-num">01</span>
+      <p>Hierarchy over decoration. Every element guides the viewer’s eye.</p>
+    </div>
+    <div class="why-card">
+      <span class="why-num">02</span>
+      <p>Emotion before aesthetics. Thumbnails should evoke curiosity and excitement.</p>
+    </div>
+    <div class="why-card">
+      <span class="why-num">03</span>
+      <p>Designed for small screens. Clear and readable even on mobile devices.</p>
+    </div>
+    <div class="why-card">
+      <span class="why-num">04</span>
+      <p>Every element has a job. Nothing is just decorative.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Let’s build thumbnails<br>that get clicked.</h2>
+  <span class="small" id="note">NOTE: The text colored orange are clickable hyperlinks.</span>
+  <p>Email: <a href="https://mail.google.com/mail/?view=cm&fs=1&to=adarshr1245@gmail.com&su=Inquiry:%20Thumbnail%20Design%20Services&body=Hi%20Adarsh,%0A%0AI%20saw%20your%20portfolio%20and%20I%27m%20interested%20in%20hiring%20you%20for%20a%20project.%20Please%20let%20me%20know%20your%20rates%20and%20availability!%0A%0AThanks," target="_blank">adarshr1245@gmail.com</a><br>Twitter: <a href="https://x.com/ARV3609" target="_blank">@ARV3609</a><br>Discord: <a href="https://discord.gg/FjmddkupcK" target="_blank">Arv3609</a></p>
+</section>
+
+</body>
+</html>
